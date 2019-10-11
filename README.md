@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/benjivesterby/atomizer-agent.svg?branch=master)](https://api.travis-ci.org/benjivesterby/atomizer-agent.svg?branch=master)
+[![Build Status](https://api.travis-ci.org/benjivesterby/atomizer-agent.svg?branch=master)](https://travis-ci.org/benjivesterby/atomizer-agent)
 [![Go Report Card](https://goreportcard.com/badge/github.com/benjivesterby/atomizer-agent)](https://goreportcard.com/report/github.com/benjivesterby/atomizer-agent)
 [![GoDoc](https://godoc.org/github.com/benjivesterby/atomizer-agent?status.svg)](https://godoc.org/github.com/benjivesterby/atomizer-agent)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
