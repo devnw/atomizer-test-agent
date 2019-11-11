@@ -20,11 +20,11 @@ const (
 	// this is specific to rabbit mq
 	CONNECTIONSTRING string = "CONNECTIONSTRING"
 
-	// EXCHANGE is the exchange for messages to be passed accross in the message queue
-	EXCHANGE string = "EXCHANGE"
+	// QUEUE is the queue for atom messages to be passed accross in the message queue
+	QUEUE string = "QUEUE"
 
-	// TOPIC is the base topic where messages will be subscribed to for this instance
-	TOPIC string = "TOPIC"
+	// RESULTS is the exchange where electron results will be returned
+	RESULTS string = "RESULTS"
 )
 
 func main() {
@@ -57,19 +57,19 @@ func main() {
 	); err == nil {
 		env := flag.Bool("e", false, "signals to the agent to use environment variables for configurations")
 		c := flag.String("conn", "amqp://guest:guest@localhost:5672/", "connection string used for rabbit mq")
-		e := flag.String("exch", "atomizer", "exchange used for passing messages")
-		t := flag.String("topic", "electrons", "base topic for listening for new messages")
+		q := flag.String("queue", "atomizer", "queue is the queue for atom messages to be passed accross in the message queue")
+		r := flag.String("results", "electrons", "results is the exchange where electron results will be returned")
 		flag.Parse()
 
 		if *env {
-			*c, *e, *t, err = envoverride()
+			*c, *q, *r, err = envoverride()
 		}
 
 		if err == nil {
 
 			// Create a copy of the conductor for the agent
 			var conductor atomizer.Conductor
-			if conductor, err = conductors.Connect(*c, *e, *t); err == nil {
+			if conductor, err = conductors.Connect(*c, *q, *r); err == nil {
 
 				// Register the conductor into the atomizer library after initializing the
 				/// connection to the message queue
@@ -152,19 +152,19 @@ func etoichan(ctx context.Context, values <-chan error) <-chan interface{} {
 
 // envoverride pulls the environment variables as defined in the constants
 // section and overwrites the passed flag values
-func envoverride() (c, e, t string, err error) {
+func envoverride() (c, q, r string, err error) {
 
 	if c = os.Getenv(CONNECTIONSTRING); len(c) > 0 {
-		if e = os.Getenv(EXCHANGE); len(e) > 0 {
-			if t = os.Getenv(TOPIC); len(t) == 0 {
-				err = errors.Errorf("environment variable %s is empty", TOPIC)
+		if q = os.Getenv(QUEUE); len(q) > 0 {
+			if r = os.Getenv(RESULTS); len(r) == 0 {
+				err = errors.Errorf("environment variable %s is empty", RESULTS)
 			}
 		} else {
-			err = errors.Errorf("environment variable %s is empty", EXCHANGE)
+			err = errors.Errorf("environment variable %s is empty", QUEUE)
 		}
 	} else {
 		err = errors.Errorf("environment variable %s is empty", CONNECTIONSTRING)
 	}
 
-	return c, e, t, err
+	return c, q, r, err
 }
