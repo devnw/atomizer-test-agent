@@ -47,6 +47,14 @@ func main() {
 
 	var err error
 
+	//[]alog.Destination{
+	// 	{
+	// 		alog.ERROR | alog.CRIT | alog.FATAL,
+	// 		alog.STD,
+	// 		os.Stderr,
+	// 	},
+	// }
+
 	if err = alog.Global(
 		ctx,
 		"ATOMIZER AGENT",

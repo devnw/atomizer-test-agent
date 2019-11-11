@@ -11,12 +11,16 @@ github.com/benjivesterby/atomizer v0.0.0-20191107003302-3c1d9fd9a173 h1:+34Gaab0
 github.com/benjivesterby/atomizer v0.0.0-20191107003302-3c1d9fd9a173/go.mod h1:xolTJBEaUX8Gt5O6n0tUxj/Da5enWzOTKPO+DGTOsOg=
 github.com/benjivesterby/atomizer v0.0.0-20191111030356-51f8731b177f h1:6/04MLG2r2V4Ca9+LoTfNraEpJx1B4jqxtguzgkKI7k=
 github.com/benjivesterby/atomizer v0.0.0-20191111030356-51f8731b177f/go.mod h1:xolTJBEaUX8Gt5O6n0tUxj/Da5enWzOTKPO+DGTOsOg=
+github.com/benjivesterby/atomizer v0.0.0-20191111223513-06100f5bcf30 h1:kw80paWrcfKMLS4WSSK2UVIFoqOewmnC4BGJWyHP1rA=
+github.com/benjivesterby/atomizer v0.0.0-20191111223513-06100f5bcf30/go.mod h1:xolTJBEaUX8Gt5O6n0tUxj/Da5enWzOTKPO+DGTOsOg=
 github.com/benjivesterby/montecarlopi v0.0.0-20191011191935-fe1f84dce033 h1:fDu4/a2FPO1LyaO0UgDxhs8hbFv9dTb7digb/fq0OtQ=
 github.com/benjivesterby/montecarlopi v0.0.0-20191011191935-fe1f84dce033/go.mod h1:AUQfDWRfVQ3S9qvmLVT0VJOmNrc8qzf5RbkaGNSebb4=
 github.com/benjivesterby/montecarlopi v0.0.0-20191107011044-a43da5581de4 h1:j6G5XYKhdJ1WcDrbtY+kUWOS6enepPip0plEtyMHbPc=
 github.com/benjivesterby/montecarlopi v0.0.0-20191107011044-a43da5581de4/go.mod h1:ODXe8e1lsgFSEQkArsltqJcq1PdPBRAqqe03KrqNCbs=
 github.com/benjivesterby/montecarlopi v0.0.0-20191111030621-40688bd13cf3 h1:2FpAe5dBZqHnlhBJ3YJHtEIp85r3gOjcHb4uoRRmDOY=
 github.com/benjivesterby/montecarlopi v0.0.0-20191111030621-40688bd13cf3/go.mod h1:x4eu+JdUjKcWUrWfu+gbbtoFdyXqCpjHigB5y+9aHuI=
+github.com/benjivesterby/montecarlopi v0.0.0-20191111223649-89edc5a02830 h1:/POjUcQzKS/o33bM2DW14X4nb6h0EHiDvE2ZIGnuixs=
+github.com/benjivesterby/montecarlopi v0.0.0-20191111223649-89edc5a02830/go.mod h1:qycYz0AelrYj53HxgYHxwVTp9E3vtGU19OAhB1QttRI=
 github.com/benjivesterby/validator v1.0.0 h1:tH7Nmf9jTTyOUVxFDof71EbsBDYBAEkoKFF90m/7mnE=
 github.com/benjivesterby/validator v1.0.0/go.mod h1:Z+2cejivNzuwe6GpnMfhRee5HUWzNCZgiKZCVpJEkAo=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
