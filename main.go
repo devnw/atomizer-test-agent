@@ -66,18 +66,17 @@ func main() {
 		env := flag.Bool("e", false, "signals to the agent to use environment variables for configurations")
 		c := flag.String("conn", "amqp://guest:guest@localhost:5672/", "connection string used for rabbit mq")
 		q := flag.String("queue", "atomizer", "queue is the queue for atom messages to be passed accross in the message queue")
-		r := flag.String("results", "electrons", "results is the exchange where electron results will be returned")
 		flag.Parse()
 
 		if *env {
-			*c, *q, *r, err = envoverride()
+			*c, *q, err = envoverride()
 		}
 
 		if err == nil {
 
 			// Create a copy of the conductor for the agent
 			var conductor atomizer.Conductor
-			if conductor, err = conductors.Connect(*c, *q, *r); err == nil {
+			if conductor, err = conductors.Connect(*c, *q); err == nil {
 
 				// Register the conductor into the atomizer library after initializing the
 				/// connection to the message queue
@@ -160,13 +159,10 @@ func etoichan(ctx context.Context, values <-chan error) <-chan interface{} {
 
 // envoverride pulls the environment variables as defined in the constants
 // section and overwrites the passed flag values
-func envoverride() (c, q, r string, err error) {
+func envoverride() (c, q string, err error) {
 
 	if c = os.Getenv(CONNECTIONSTRING); len(c) > 0 {
 		if q = os.Getenv(QUEUE); len(q) > 0 {
-			if r = os.Getenv(RESULTS); len(r) == 0 {
-				err = errors.Errorf("environment variable %s is empty", RESULTS)
-			}
 		} else {
 			err = errors.Errorf("environment variable %s is empty", QUEUE)
 		}
@@ -174,5 +170,5 @@ func envoverride() (c, q, r string, err error) {
 		err = errors.Errorf("environment variable %s is empty", CONNECTIONSTRING)
 	}
 
-	return c, q, r, err
+	return c, q, err
 }
