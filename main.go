@@ -22,9 +22,6 @@ const (
 
 	// QUEUE is the queue for atom messages to be passed accross in the message queue
 	QUEUE string = "QUEUE"
-
-	// RESULTS is the exchange where electron results will be returned
-	RESULTS string = "RESULTS"
 )
 
 func main() {
