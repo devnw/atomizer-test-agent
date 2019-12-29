@@ -22,6 +22,8 @@ github.com/benjivesterby/atomizer v0.0.0-20191228184226-8c8834a970c8 h1:lPM2Er/b
 github.com/benjivesterby/atomizer v0.0.0-20191228184226-8c8834a970c8/go.mod h1:HMP2dMsLzr8qoVk1fcsmYOMlvWVgfJWx5iOfEH/fJE0=
 github.com/benjivesterby/atomizer v0.0.0-20191229154348-3f0e4fde8cf3 h1:O906GpEzwWw0ECbARMG8VGvylM/WAgOWWUImzXN0H0U=
 github.com/benjivesterby/atomizer v0.0.0-20191229154348-3f0e4fde8cf3/go.mod h1:HMP2dMsLzr8qoVk1fcsmYOMlvWVgfJWx5iOfEH/fJE0=
+github.com/benjivesterby/atomizer v0.0.0-20191229211640-adc70e567c51 h1:4POgofOMO+XMF654tZ+FO83uZCxWgHvwY0VL/xFEQc8=
+github.com/benjivesterby/atomizer v0.0.0-20191229211640-adc70e567c51/go.mod h1:HMP2dMsLzr8qoVk1fcsmYOMlvWVgfJWx5iOfEH/fJE0=
 github.com/benjivesterby/montecarlopi v0.0.0-20191011191935-fe1f84dce033 h1:fDu4/a2FPO1LyaO0UgDxhs8hbFv9dTb7digb/fq0OtQ=
 github.com/benjivesterby/montecarlopi v0.0.0-20191011191935-fe1f84dce033/go.mod h1:AUQfDWRfVQ3S9qvmLVT0VJOmNrc8qzf5RbkaGNSebb4=
 github.com/benjivesterby/montecarlopi v0.0.0-20191107011044-a43da5581de4 h1:j6G5XYKhdJ1WcDrbtY+kUWOS6enepPip0plEtyMHbPc=
@@ -38,6 +40,8 @@ github.com/benjivesterby/montecarlopi v0.0.0-20191228184601-5f526219f2a3 h1:1m3e
 github.com/benjivesterby/montecarlopi v0.0.0-20191228184601-5f526219f2a3/go.mod h1:mz9SVeqYfkJdSJM4zjYD/M2xu1wfCOLVOYpXUNrPouE=
 github.com/benjivesterby/montecarlopi v0.0.0-20191228184856-aa90181fa8d6 h1:dFsLmJG5pDYJFZAW387nLbAQfyA9BBN7ZelIqeohQzQ=
 github.com/benjivesterby/montecarlopi v0.0.0-20191228184856-aa90181fa8d6/go.mod h1:hN5/opHQLGzFFzZcfTKMOMPRg/O2SppnEMrkktTf3vQ=
+github.com/benjivesterby/montecarlopi v0.0.0-20191229212042-e6048b3a83c2 h1:3zkDQjUYdgFm8ZJH7tgDiobQi2FEcLomtMSQvGk5bf4=
+github.com/benjivesterby/montecarlopi v0.0.0-20191229212042-e6048b3a83c2/go.mod h1:r1ufyfv85cOyMR0xCLgzNP4ZfR8J1lql1vpGQgDuYFA=
 github.com/benjivesterby/validator v1.0.0 h1:tH7Nmf9jTTyOUVxFDof71EbsBDYBAEkoKFF90m/7mnE=
 github.com/benjivesterby/validator v1.0.0/go.mod h1:Z+2cejivNzuwe6GpnMfhRee5HUWzNCZgiKZCVpJEkAo=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=

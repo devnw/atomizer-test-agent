@@ -73,7 +73,7 @@ func main() {
 
 			// Create a copy of the conductor for the agent
 			var conductor atomizer.Conductor
-			if conductor, err = conductors.Connect(*c, *q); err == nil {
+			if conductor, err = conductors.Connect(ctx, *c, *q); err == nil {
 
 				// Register the conductor into the atomizer library after initializing the
 				/// connection to the message queue
