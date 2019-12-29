@@ -77,7 +77,7 @@ func main() {
 
 				// Register the conductor into the atomizer library after initializing the
 				/// connection to the message queue
-				atomizer.Register(ctx, conductor.ID(), conductor)
+				atomizer.Register(ctx, conductor)
 
 				if conductor != nil {
 
@@ -94,8 +94,6 @@ func main() {
 
 							// Block until the processing is interrupted
 							mizer.Wait()
-
-							alog.Println("Received Cleanup Complete")
 						} else {
 							alog.Fatalln(err, "error while executing atomizer")
 						}
@@ -113,8 +111,9 @@ func main() {
 		}
 
 		time.Sleep(time.Millisecond * 50)
-		// TODO: Get the alog wait method to work with the internal channels
-		alog.Wait()
+
+		// Get the alog wait method to work with the internal channels
+		alog.Wait(true)
 	} else {
 		alog.Fatalln(nil, "unable to overwrite the global logger")
 	}
