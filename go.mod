@@ -1,6 +1,6 @@
 module github.com/benjivesterby/atomizer-agent
 
-go 1.13
+go 1.14
 
 require (
 	github.com/benjivesterby/alog v0.0.0-20191227202256-87643283ff6c
