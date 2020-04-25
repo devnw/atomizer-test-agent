@@ -8,10 +8,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/benjivesterby/alog"
-	"github.com/benjivesterby/atomizer"
-	"github.com/benjivesterby/atomizer/conductors"
-	_ "github.com/benjivesterby/montecarlopi"
+	"github.com/devnw/alog"
+	"github.com/devnw/atomizer"
+	amqp "github.com/devnw/conductors/amqp"
+	_ "github.com/devnw/montecarlopi"
 	"github.com/pkg/errors"
 )
 
@@ -20,7 +20,7 @@ const (
 	// this is specific to rabbit mq
 	CONNECTIONSTRING string = "CONNECTIONSTRING"
 
-	// QUEUE is the queue for atom messages to be passed accross in the message queue
+	// QUEUE is the queue for atom messages to be passed across in the message queue
 	QUEUE string = "QUEUE"
 )
 
@@ -62,7 +62,7 @@ func main() {
 	); err == nil {
 		env := flag.Bool("e", false, "signals to the agent to use environment variables for configurations")
 		c := flag.String("conn", "amqp://guest:guest@localhost:5672/", "connection string used for rabbit mq")
-		q := flag.String("queue", "atomizer", "queue is the queue for atom messages to be passed accross in the message queue")
+		q := flag.String("queue", "atomizer", "queue is the queue for atom messages to be passed across in the message queue")
 		flag.Parse()
 
 		if *env {
@@ -73,19 +73,20 @@ func main() {
 
 			// Create a copy of the conductor for the agent
 			var conductor atomizer.Conductor
-			if conductor, err = conductors.Connect(ctx, *c, *q); err == nil {
+			if conductor, err = amqp.Connect(ctx, *c, *q); err == nil {
 
 				// Register the conductor into the atomizer library after initializing the
 				/// connection to the message queue
-				atomizer.Register(ctx, conductor)
+				err := atomizer.Register(conductor)
+				if err != nil {
+					panic(err)
+				}
 
 				if conductor != nil {
-
+					events := make(chan interface{})
+					alog.Printc(ctx, events)
 					// Create a copy of the atomizer
-					if mizer := atomizer.Atomize(ctx); mizer != nil {
-
-						alog.Printc(ctx, stoichan(ctx, mizer.Events(0)))
-						alog.Errorc(ctx, etoichan(ctx, mizer.Errors(0)))
+					if mizer := atomizer.Atomize(ctx, events); mizer != nil {
 
 						// Execute the processing on the atomizer
 						if err = mizer.Exec(); err == nil {
@@ -117,40 +118,6 @@ func main() {
 	} else {
 		alog.Fatalln(nil, "unable to overwrite the global logger")
 	}
-}
-
-func stoichan(ctx context.Context, values <-chan string) <-chan interface{} {
-	out := make(chan interface{})
-
-	go func(ctx context.Context, values <-chan string, out chan<- interface{}) {
-		for {
-			select {
-			case <-ctx.Done():
-				close(out)
-				return
-			case out <- <-values:
-			}
-		}
-	}(ctx, values, out)
-
-	return out
-}
-
-func etoichan(ctx context.Context, values <-chan error) <-chan interface{} {
-	out := make(chan interface{})
-
-	go func(ctx context.Context, values <-chan error, out chan<- interface{}) {
-		for {
-			select {
-			case <-ctx.Done():
-				close(out)
-				return
-			case out <- <-values:
-			}
-		}
-	}(ctx, values, out)
-
-	return out
 }
 
 // envoverride pulls the environment variables as defined in the constants
