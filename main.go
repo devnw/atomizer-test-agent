@@ -40,6 +40,7 @@ func main() {
 			return
 		case <-sigs:
 			alog.Println("Closing Atomizer Agent")
+			os.Exit(1)
 		}
 	}()
 
