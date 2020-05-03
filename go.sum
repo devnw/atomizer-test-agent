@@ -2,8 +2,8 @@ github.com/Pallinder/go-randomdata v1.2.0 h1:DZ41wBchNRb/0GfsePLiSwb0PHZmT67XY00
 github.com/Pallinder/go-randomdata v1.2.0/go.mod h1:yHmJgulpD2Nfrm0cR9tI/+oAgRqCQQixsA8HyRZfV9Y=
 github.com/devnw/alog v1.0.1 h1:9CzzUwapaWsVWfPdnpaCKxFHFdfsx2tVbft3grV3AH0=
 github.com/devnw/alog v1.0.1/go.mod h1:Aw4xF3fFZcv69DP3Ohu3OOMIJAtXZuY+tsXZusFrav8=
-github.com/devnw/alog v1.0.2-0.20200426214902-d7dd58b863d0 h1:wmPv6/dZTsX03VNfEtYbXwri+YuXb9RJRaWObxIAbqc=
-github.com/devnw/alog v1.0.2-0.20200426214902-d7dd58b863d0/go.mod h1:Aw4xF3fFZcv69DP3Ohu3OOMIJAtXZuY+tsXZusFrav8=
+github.com/devnw/alog v1.0.2-0.20200502220347-f1c5d181b272 h1:q1DvaiSF1e71bVaV2SP4zQqEKmkqgtPdpxwAHDwQutg=
+github.com/devnw/alog v1.0.2-0.20200502220347-f1c5d181b272/go.mod h1:Aw4xF3fFZcv69DP3Ohu3OOMIJAtXZuY+tsXZusFrav8=
 github.com/devnw/amqp v0.0.0-20200428025604-ecd41df35a9e h1:urx/+zcSmulIRxrJW/yXIajQMU1qGE7mzhjoYrLglCg=
 github.com/devnw/amqp v0.0.0-20200428025604-ecd41df35a9e/go.mod h1:Gpbdjxx1Q0uAp7YNqKae8Lzx3QVJVPbLktedZbGDkAg=
 github.com/devnw/atomizer v0.0.0-20200428025136-4c73160e6fc7 h1:sm75LCqtyKxkBLMov+49fAm16aw72aJ0faMLKQwKPz4=
