@@ -11,5 +11,5 @@ import (
 )
 
 func main() {
-	cmd.Initialize()
+	cmd.Initialize("Atomizer Test Agent")
 }
