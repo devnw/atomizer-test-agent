@@ -18,6 +18,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: atomizer/test-ui
+          repository: atomizer/test-agent
           tag_with_ref: true
           push: ${{ startsWith(github.ref, 'refs/tags/') }}
