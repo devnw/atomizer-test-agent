@@ -1,11 +1,8 @@
-module github.com/devnw/atomizer-agent
+module atomizer.io/test-agent
 
-go 1.14
+go 1.16
 
 require (
-	github.com/devnw/alog v1.0.2
-	github.com/devnw/amqp v1.0.3
-	github.com/devnw/atomizer v1.0.0
-	github.com/devnw/montecarlopi v0.0.0-20200510191238-2b0899462d9d
-	github.com/pkg/errors v0.9.1
+	atomizer.io/cmd v0.0.1
+	atomizer.io/montecarlopi v0.0.0-20210228151111-b463b6e93c16
 )
