@@ -6,10 +6,17 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"atomizer.io/cmd"
 	_ "atomizer.io/montecarlopi"
 )
 
 func main() {
-	cmd.Initialize("Atomizer Test Agent")
+	err := cmd.Initialize("Atomizer Test Agent")
+	if err != nil {
+		fmt.Println(err.Error())
+		os.Exit(1)
+	}
 }
