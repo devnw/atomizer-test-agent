@@ -1,0 +1,21 @@
+version: '2.1'
+
+services:
+        rabbit-mq:
+                image: 'rabbitmq:3-management'
+                container_name: atomrabbit
+                hostname: atomrabbit
+                ports:
+                        - 8080:15672
+                        - 5672:5672
+        atomizer:
+                build:
+                        context: .
+                        dockerfile: Dockerfile
+                image: 'test-agent'
+                depends_on:
+                        - "rabbit-mq"
+                environment:
+                        - CONNECTIONSTRING=amqp://guest:guest@atomrabbit:5672/
+                        - QUEUE=atomizer
+                        - LOGLEVEL=INFO
