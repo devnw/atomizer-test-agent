@@ -1,8 +1,8 @@
-module atomizer.io/test-agent
+module go.atomizer.io/test-agent
 
 go 1.16
 
 require (
-	atomizer.io/cmd v0.0.5
-	atomizer.io/montecarlopi v0.0.2
+	go.atomizer.io/cmd v0.0.6
+	go.atomizer.io/montecarlopi v0.0.3
 )

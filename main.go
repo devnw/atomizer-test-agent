@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"os"
 
-	"atomizer.io/cmd"
-	_ "atomizer.io/montecarlopi"
+	"go.atomizer.io/cmd"
+	_ "go.atomizer.io/montecarlopi"
 )
 
 func main() {
